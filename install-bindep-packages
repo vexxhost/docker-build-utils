@@ -7,4 +7,5 @@ set -e
 SCRIPT_DIR=$(dirname "$0")
 BINDEP_FILE="${1:-/bindep.txt}"
 
+export UV_LINK_MODE=copy
 "$SCRIPT_DIR/install-packages" $("$SCRIPT_DIR/uvx" bindep -b -f "$BINDEP_FILE")
