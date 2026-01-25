@@ -1,0 +1,10 @@
+#!/bin/sh
+# Copyright 2025 VEXXHOST, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+set -e
+
+SCRIPT_DIR=$(dirname "$0")
+BINDEP_FILE="${1:-/bindep.txt}"
+
+"$SCRIPT_DIR/install-packages" $("$SCRIPT_DIR/uvx" bindep -b -f "$BINDEP_FILE")

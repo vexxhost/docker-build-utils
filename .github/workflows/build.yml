@@ -1,0 +1,22 @@
+name: build
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+      pull-requests: write
+    steps:
+      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
+        with:
+          image-name: build-utils
+          push: ${{ github.event_name != 'pull_request' }}
