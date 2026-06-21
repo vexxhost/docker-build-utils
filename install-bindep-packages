@@ -1,6 +1,8 @@
 #!/bin/sh
 # Copyright 2025 VEXXHOST, Inc.
 # SPDX-License-Identifier: Apache-2.0
+#
+# Install packages from bindep.txt using the system package manager.
 
 set -e
 
