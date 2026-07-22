@@ -3,9 +3,6 @@ name: build
 on:
   pull_request:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 permissions:
   contents: read
@@ -27,4 +24,4 @@ jobs:
       - uses: vexxhost/docker-atmosphere/.github/actions/build-image@e72a4bb3670421e6ec38413e3e90b11259d86ea1 # main
         with:
           image-name: build-utils
-          push: ${{ github.event_name != 'pull_request' }}
+          push: false
